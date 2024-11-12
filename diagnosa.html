@@ -1,0 +1,221 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Diagnosis Penyakit dan Hama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-red-50 font-roboto">
+    <header class="bg-red-700 text-white py-4 flex items-center justify-between px-6">
+        <div class="flex items-center">
+            <img alt="Logo of a plant with a magnifying glass" class="mr-4 w-24 h-auto" height="100" src="Desain tanpa judul.png" width="100"/>
+            <h1 class="text-3xl font-bold">Diagnosis Penyakit dan Hama</h1>
+        </div>
+        <nav>
+            <ul class="flex space-x-4">
+                <li>
+                    <a href="index.html">
+                        <img alt="Home" class="w-10 h-auto" height="40" src="home.png" width="40"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="diagnosa.html">
+                        <img alt="Diagnosis" class="w-10 h-auto" height="40" src="diagnosa.png" width="40"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="Contac.html">
+                        <img alt="Contact" class="w-10 h-auto" height="40" src="contac.png" width="40"/>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container mx-auto mt-8">
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-red-700">Diagnosis</h2>
+            <div class="bg-red-100 p-6 rounded-lg shadow-md">
+                <form id="diagnosis-form">
+                    <label class="block text-lg font-medium text-red-700" for="symptom">Pilih Gejala:</label>
+                    <select class="mt-1 block w-full py-2 px-3 border border-red-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm" id="symptom" name="symptom">
+                        <option value="fruit-rot">Buah membusuk, bercak hitam, dan berair</option>
+                        <option value="wilting">Daun menguning, layu, dan tanaman mati</option>
+                        <option value="leaf-spot">Bercak cokelat pada daun, daun mengering, dan gugur</option>
+                        <option value="virus">Daun keriting, bercak kuning, dan pertumbuhan terhambat</option>
+                        <option value="aphids">Daun keriting, pertumbuhan terhambat, dan exudate lengket</option>
+                        <option value="armyworm">Daun dimakan, terutama bagian tepi</option>
+                        <option value="leaf-beetle">Kerusakan pada daun, menyebabkan lubang-lubang</option>
+                        <option value="stem-borer">Lubang pada batang dan daun, tanaman layu</option>
+                        <option value="mite">Daun menguning, bercak kecil, dan jaringan daun yang mengering</option>
+                    </select>
+                    <button class="mt-4 w-full bg-red-700 text-white py-2 px-4 rounded-md hover:bg-red-800" type="submit">Diagnosa</button>
+                </form>
+                <div class="mt-4 p-4 bg-red-200 rounded-md hidden" id="diagnosis-result">
+                    <h3 class="text-xl font-semibold mb-2 text-red-700">Hasil Diagnosa:</h3>
+                    <p id="result-text" class="text-red-700"></p>
+                    <div class="hidden" id="disease-info">
+                        <h4 class="text-lg font-semibold mb-2 text-red-700">Informasi Penyakit/Hama:</h4>
+                        <p id="disease-description" class="text-red-700"></p>
+                        <img alt="" class="mb-4 rounded-lg" height="400" id="disease-image" src="" width="600">
+                        <h4 class="text-lg font-semibold mb-2 text-red-700">Cara Penanganan:</h4>
+                        <ul class="list-disc list-inside text-red-700" id="treatment-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        document.getElementById('diagnosis-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const symptom = document.getElementById('symptom').value;
+            const resultText = document.getElementById('result-text');
+            const diseaseInfo = document.getElementById('disease-info');
+            const diseaseDescription = document.getElementById('disease-description');
+            const treatmentList = document.getElementById('treatment-list');
+            const diseaseImage = document.getElementById('disease-image');
+            const diagnosisResult = document.getElementById('diagnosis-result');
+
+            let diagnosis = {};
+            switch(symptom) {
+                case 'fruit-rot':
+                    diagnosis = {
+                        result: 'Penyakit Busuk Buah (Fruit Rot)',
+                        description: 'Buah membusuk, bercak hitam, dan berair.',
+                        treatment: [
+                            'Menghindari kelembapan berlebih di lahan.',
+                            'Menggunakan fungisida yang sesuai.',
+                            'Memanen buah secara rutin untuk menghindari infeksi lebih lanjut.'
+                        ],
+                        image: 'busukbuah.jpeg'
+                    };
+                    break;
+                case 'wilting':
+                    diagnosis = {
+                        result: 'Penyakit Layu (Wilting)',
+                        description: 'Daun menguning, layu, dan tanaman mati.',
+                        treatment: [
+                            'Menggunakan varietas tahan terhadap penyakit.',
+                            'Rotasi tanaman dan sanitasi lahan.',
+                            'Menghindari penyiraman berlebihan.'
+                        ],
+                        image: 'layu.jpeg'
+                    };
+                    break;
+                case 'leaf-spot':
+                    diagnosis = {
+                        result: 'Penyakit Bercak Daun (Leaf Spot)',
+                        description: 'Bercak cokelat pada daun, daun mengering, dan gugur.',
+                        treatment: [
+                            'Menggunakan fungisida.',
+                            'Memangkas daun yang terinfeksi.',
+                            'Menjaga kebersihan lahan dan sirkulasi udara.'
+                        ],
+                        image: 'bercak.jpeg'
+                    };
+                    break;
+                case 'virus':
+                    diagnosis = {
+                        result: 'Penyakit Virus Kuning (Yellow Spot)',
+                        description: 'Daun keriting, bercak kuning, dan pertumbuhan terhambat.',
+                        treatment: [
+                            'Menggunakan varietas tahan virus.',
+                            'Menghilangkan tanaman terinfeksi.',
+                            'Mengendalikan vektor (seperti kutu daun) yang menyebarkan virus.'
+                        ],
+                        image: 'kuning.jpeg'
+                    };
+                    break;
+                case 'aphids':
+                    diagnosis = {
+                        result: 'Kutu Daun (Aphids)',
+                        description: 'Daun keriting, pertumbuhan terhambat, dan exudate lengket.',
+                        treatment: [
+                            'Menggunakan insektisida nabati seperti neem oil.',
+                            'Menggunakan predator alami seperti ladybugs.',
+                            'Memangkas bagian tanaman yang terinfeksi.'
+                        ],
+                        image: 'kutu daun.jpeg'
+                    };
+                    break;
+                case 'armyworm':
+                    diagnosis = {
+                        result: 'Ulat Grayak (Spodoptera exigua)',
+                        description: 'Daun dimakan, terutama bagian tepi.',
+                        treatment: [
+                            'Menggunakan insektisida kimia atau nabati.',
+                            'Melakukan pengendalian mekanik dengan memungut ulat.',
+                            'Menggunakan perangkap feromon untuk mengurangi populasi.'
+                        ],
+                        image: 'ulat.jpeg'
+                    };
+                    break;
+                case 'leaf-beetle':
+                    diagnosis = {
+                        result: 'Kumbang Daun (Coleoptera)',
+                        description: 'Kerusakan pada daun, menyebabkan lubang-lubang.',
+                        treatment: [
+                            'Menggunakan insektisida.',
+                            'Menjaga kebersihan lahan dan menghilangkan sisa-sisa tanaman.',
+                            'Memasang perangkap untuk mengurangi populasi.'
+                        ],
+                        image: 'kumbangdaun.jpeg'
+                    };
+                    break;
+                case 'stem-borer':
+                    diagnosis = {
+                        result: 'Penggerek Batang (Borer)',
+                        description: 'Lubang pada batang dan daun, tanaman layu.',
+                        treatment: [
+                            'Menggunakan insektisida sistemik.',
+                            'Memotong dan membakar bagian tanaman yang terinfeksi.',
+                            'Menggunakan varietas tahan terhadap penggerek.'
+                        ],
+                        image: 'pengerekbatang.jpeg'
+                    };
+                    break;
+                case 'mite':
+                    diagnosis = {
+                        result: 'Tungau (Mite)',
+                        description: 'Daun menguning, bercak kecil, dan jaringan daun yang mengering.',
+                        treatment: [
+                            'Menggunakan akarisida.',
+                            'Meningkatkan kelembapan udara.',
+                            'Menggunakan predator alami seperti ladybugs.'
+                        ],
+                        image: 'tungau.jpeg'
+                    };
+                    break;
+                default:
+                    diagnosis = {
+                        result: 'Gejala tidak dikenali',
+                        description: 'Gejala yang Anda pilih tidak dikenali dalam sistem kami.',
+                        treatment: [],
+                        image: ''
+                    };
+            }
+
+            resultText.textContent = diagnosis.result;
+            diseaseDescription.textContent = diagnosis.description;
+            diseaseImage.src = diagnosis.image;
+            diseaseImage.alt = diagnosis.result;
+
+            treatmentList.innerHTML = '';
+            diagnosis.treatment.forEach(function(treatment) {
+                const li = document.createElement('li');
+                li.textContent = treatment;
+                treatmentList.appendChild(li);
+            });
+
+            diagnosisResult.classList.remove('hidden');
+            diseaseInfo.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
