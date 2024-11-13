@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -13,35 +14,35 @@
     </style>
 </head>
 <body class="bg-red-50 font-roboto">
-    <header class="bg-red-700 text-white py-4 flex items-center justify-between px-6">
+    <header class="bg-red-700 text-white py-4 flex items-center justify-between px-4 md:px-6">
         <div class="flex items-center">
-            <img alt="Logo of a plant with a magnifying glass" class="mr-4 w-24 h-auto" height="100" src="Desain tanpa judul.png" width="100"/>
-            <h1 class="text-3xl font-bold">Diagnosis Penyakit dan Hama</h1>
+            <img alt="Logo of a plant with a magnifying glass" class="mr-2 w-16 h-auto md:w-24" height="100" src="Desain tanpa judul.png" width="100"/>
+            <h1 class="text-xl md:text-3xl font-bold">CAB-BAIMU</h1>
         </div>
         <nav>
-            <ul class="flex space-x-4">
+            <ul class="flex space-x-2 md:space-x-4">
                 <li>
                     <a href="index.html">
-                        <img alt="Home" class="w-10 h-auto" height="40" src="home.png" width="40"/>
+                        <img alt="Home" class="w-8 h-auto md:w-10" height="40" src="home.png" width="40"/>
                     </a>
                 </li>
                 <li>
                     <a href="diagnosa.html">
-                        <img alt="Diagnosis" class="w-10 h-auto" height="40" src="diagnosa.png" width="40"/>
+                        <img alt="Diagnosis" class="w-8 h-auto md:w-10" height="40" src="diagnosa.png" width="40"/>
                     </a>
                 </li>
                 <li>
                     <a href="Contac.html">
-                        <img alt="Contact" class="w-10 h-auto" height="40" src="contac.png" width="40"/>
+                        <img alt="Contact" class="w-8 h-auto md:w-10" height="40" src="contac.png" width="40"/>
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
-    <div class="container mx-auto mt-8">
+    <div class="container mx-auto mt-4 md:mt-8 px-4 md:px-0">
         <section class="mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-red-700">Diagnosis</h2>
-            <div class="bg-red-100 p-6 rounded-lg shadow-md">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 text-red-700">Diagnosis</h2>
+            <div class="bg-red-100 p-4 md:p-6 rounded-lg shadow-md">
                 <form id="diagnosis-form">
                     <label class="block text-lg font-medium text-red-700" for="symptom">Pilih Gejala:</label>
                     <select class="mt-1 block w-full py-2 px-3 border border-red-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm" id="symptom" name="symptom">
