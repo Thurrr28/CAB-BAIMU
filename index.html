@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -11,12 +10,25 @@
         body {
             font-family: 'Roboto', sans-serif;
         }
+        .fade-in-logo {
+            animation: fadeInLogo 2s ease-in-out;
+        }
+        @keyframes fadeInLogo {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body class="bg-red-50">
-    <header class="bg-red-700 text-white py-4 flex items-center justify-between px-4 md:px-6">
+    <header class="text-white py-4 flex items-center justify-between px-4 md:px-6 bg-opacity-75 bg-red-700">
         <div class="flex items-center">
-            <img alt="Logo of a plant with a magnifying glass" class="mr-2 md:mr-4" height="50" src="Desain tanpa judul.png" width="50"/>
+            <img alt="Logo of a plant with a magnifying glass" class="mr-2 md:mr-4 fade-in-logo" height="50" src="Desain tanpa judul.png" width="50"/>
             <h1 class="text-xl md:text-3xl font-bold">CAB-BAIMU</h1>
         </div>
         <nav>
@@ -40,7 +52,7 @@
         </nav>
     </header>
     <div class="container mx-auto mt-4 md:mt-8 px-4">
-        <section class="mb-4 md:mb-8 text-center">
+        <section class="mb-4 md:mb-8 text-center fade-in-logo">
             <h2 class="text-2xl md:text-4xl font-bold mb-2 md:mb-4">Selamat Datang di Aplikasi CAB-BAIMU</h2>
             <p class="text-base md:text-lg mb-4 md:mb-6">Aplikasi ini membantu Anda mendiagnosis penyakit dan hama pada tanaman cabai. Pilih gejala yang Anda temui pada tanaman Anda, dan kami akan memberikan diagnosis serta cara penanganannya.</p>
             <img alt="Illustration of a plant with various symptoms of diseases and pests" class="mx-auto mb-4 md:mb-6 rounded-lg" height="200" src="https://storage.googleapis.com/a1aa/image/R10bRaPs5yLbNtVl6C7UR4FlbK0688MXgRZb1yHPNY2y1C8E.jpg" width="300"/>
