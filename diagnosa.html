@@ -34,6 +34,12 @@
                 opacity: 1;
             }
         }
+        .neon-red {
+            box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+        }
+        .neon-black {
+            box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000;
+        }
     </style>
 </head>
 <body class="bg-red-50 font-roboto fade-in">
@@ -45,17 +51,17 @@
         <nav>
             <ul class="flex space-x-2 md:space-x-4">
                 <li>
-                    <a href="index.html">
+                    <a class="neon-black-hover" href="index.html">
                         <img alt="Home" class="w-8 h-auto md:w-10" height="40" src="home.png" width="40"/>
                     </a>
                 </li>
                 <li>
-                    <a href="diagnosa.html">
+                    <a class="neon-black-hover" href="diagnosa.html">
                         <img alt="Diagnosis" class="w-8 h-auto md:w-10" height="40" src="diagnosa.png" width="40"/>
                     </a>
                 </li>
                 <li>
-                    <a href="Contac.html">
+                    <a class="neon-black-hover" href="Contac.html">
                         <img alt="Contact" class="w-8 h-auto md:w-10" height="40" src="contac.png" width="40"/>
                     </a>
                 </li>
@@ -79,7 +85,7 @@
                         <option value="stem-borer">Lubang pada batang dan daun, tanaman layu</option>
                         <option value="mite">Daun menguning, bercak kecil, dan jaringan daun yang mengering</option>
                     </select>
-                    <button class="mt-4 w-full bg-red-700 text-white py-2 px-4 rounded-md hover:bg-red-800" type="submit">Diagnosa</button>
+                    <button class="mt-4 w-full bg-white text-red-700 py-2 px-4 rounded-md hover:bg-red-800 hover:text-white" id="diagnose-button" type="submit">Diagnosa</button>
                 </form>
                 <div class="mt-4 p-4 bg-red-200 rounded-md hidden slide-in" id="diagnosis-result">
                     <h3 class="text-xl font-semibold mb-2 text-red-700">Hasil Diagnosa:</h3>
@@ -105,6 +111,9 @@
             const treatmentList = document.getElementById('treatment-list');
             const diseaseImage = document.getElementById('disease-image');
             const diagnosisResult = document.getElementById('diagnosis-result');
+            const diagnoseButton = document.getElementById('diagnose-button');
+
+            diagnoseButton.classList.add('neon-red');
 
             let diagnosis = {};
             switch(symptom) {
@@ -239,6 +248,19 @@
 
             diagnosisResult.classList.remove('hidden');
             diseaseInfo.classList.remove('hidden');
+
+            setTimeout(() => {
+                diagnoseButton.classList.remove('neon-red');
+            }, 1000);
+        });
+
+        document.querySelectorAll('.neon-black-hover').forEach(function(link) {
+            link.addEventListener('click', function() {
+                link.classList.add('neon-black');
+                setTimeout(() => {
+                    link.classList.remove('neon-black');
+                }, 1000);
+            });
         });
     </script>
 </body>

@@ -1,56 +1,153 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Tentang Kami </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-    <style>
-        body {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Tentang Kami
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+   body {
             font-family: 'Roboto', sans-serif;
         }
-    </style>
-</head>
-<body class="bg-red-50">
-    <header class="bg-red-700 text-white py-4 flex items-center justify-between px-4 md:px-6">
-        <div class="flex items-center">
-            <img alt="Logo of a plant with a magnifying glass" class="mr-2 md:mr-4 w-12 h-12 md:w-16 md:h-16" src="Desain tanpa judul.png"/>
-            <h1 class="text-xl md:text-3xl font-bold">CAB-BAIMU</h1>
-        </div>
-        <nav>
-            <ul class="flex space-x-2 md:space-x-4">
-                <li>
-                    <a href="index.html">
-                        <img alt="Home" class="w-8 h-8 md:w-12 md:h-auto" src="home.png"/>
-                    </a>
-                </li>
-                <li>
-                    <a href="diagnosa.html">
-                        <img alt="Diagnosis" class="w-8 h-8 md:w-12 md:h-auto" src="diagnosa.png"/>
-                    </a>
-                </li>
-                <li>
-                    <a href="Contac.html">
-                        <img alt="Contact" class="w-8 h-8 md:w-12 md:h-auto" src="contac.png"/>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <div class="container mx-auto mt-4 md:mt-8 px-4 md:px-0">
-        <section class="mb-8 text-center">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4">Tentang Kami</h2>
-            <p class="text-base md:text-lg mb-6">Aplikasi CAB-BAIMU adalah sebuah inisiatif untuk membantu para petani dan pecinta tanaman cabai dalam mendiagnosis penyakit dan hama yang menyerang tanaman mereka. Kami percaya bahwa dengan informasi yang tepat dan akurat, para petani dapat mengambil tindakan yang cepat dan efektif untuk menjaga kesehatan tanaman mereka.</p>
-            <img alt="Team of developers working on the CAB-BAIMU application" class="mx-auto mb-6 rounded-lg w-full md:w-3/4" height="400" src="Desain tanpa judul.png" width="600"/>
-            <h3 class="text-xl md:text-2xl font-bold mb-4">Tim Kami</h3>
-            <div class="bg-red-100 p-4 md:p-6 rounded-lg shadow-md">
-                <img alt="Portrait of a team member, Fathur Rahman Azzuhra, the UX/UI designer" class="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full mb-4" height="150" src="turr.jpg" width="150"/>
-                <h4 class="text-lg md:text-xl font-bold mb-2">Fathur Rahman Azzuhra</h4>
-                <p class="text-gray-700">UX/UI Designer</p>
-            </div>
-        </section>
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .fade-out {
+            animation: fadeOut 1s ease-in-out;
+        }
+        .slide-in {
+            animation: slideIn 0.5s ease-in-out;
+        }
+        .slide-out {
+            animation: slideOut 0.5s ease-in-out;
+        }
+        .bounce-in {
+            animation: bounceIn 1s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+        }
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(.9, .9, .9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(.97, .97, .97);
+            }
+            100% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+  </style>
+ </head>
+ <body class="bg-red-50 fade-in">
+  <header class="bg-red-700 text-white py-4 flex items-center justify-between px-4 md:px-6">
+   <div class="flex items-center">
+    <img alt="Logo of a plant with a magnifying glass" class="mr-2 md:mr-4 w-12 h-12 md:w-16 md:h-16" height="64" src="Desain tanpa judul.png" width="64"/>
+    <h1 class="text-xl md:text-3xl font-bold">
+     CAB-BAIMU
+    </h1>
+   </div>
+   <nav>
+    <ul class="flex space-x-2 md:space-x-4">
+     <li>
+      <a href="index.html">
+       <img alt="Home" class="w-8 h-8 md:w-12 md:h-auto" height="32" src="home.png" width="32"/>
+      </a>
+     </li>
+     <li>
+      <a href="diagnosa.html">
+       <img alt="Diagnosis" class="w-8 h-8 md:w-12 md:h-auto" height="32" src="diagnosa.png" width="32"/>
+      </a>
+     </li>
+     <li>
+      <a href="Contac.html">
+       <img alt="Contact" class="w-8 h-8 md:w-12 md:h-auto" height="32" src="contac.png" width="32"/>
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <div class="container mx-auto mt-4 md:mt-8 px-4 md:px-0">
+   <section class="mb-8 text-center slide-in">
+    <h2 class="text-2xl md:text-4xl font-bold mb-4">
+     Tentang Kami
+    </h2>
+    <p class="text-base md:text-lg mb-6">
+     Aplikasi CAB-BAIMU adalah sebuah inisiatif untuk membantu para petani dan pecinta tanaman cabai dalam mendiagnosis penyakit dan hama yang menyerang tanaman mereka. Kami percaya bahwa dengan informasi yang tepat dan akurat, para petani dapat mengambil tindakan yang cepat dan efektif untuk menjaga kesehatan tanaman mereka.
+    </p>
+    <img alt="Team of developers working on the CAB-BAIMU application" class="mx-auto mb-6 rounded-lg w-full md:w-3/4 bounce-in" height="400" src="Desain tanpa judul.png" width="600"/>
+    <h3 class="text-xl md:text-2xl font-bold mb-4">
+     Tim Kami
+    </h3>
+    <div class="bg-red-100 p-4 md:p-6 rounded-lg shadow-md bounce-in">
+     <img alt="Portrait of a team member, Fathur Rahman Azzuhra, the UX/UI designer" class="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full mb-4" height="150" src="turr.jpg" width="150"/>
+     <h4 class="text-lg md:text-xl font-bold mb-2">
+      Fathur Rahman Azzuhra
+     </h4>
+     <p class="text-gray-700">
+      UX/UI Designer
+     </p>
     </div>
-</body>
+   </section>
+  </div>
+  <script>
+   window.addEventListener('beforeunload', function () {
+            document.body.classList.add('fade-out');
+        });
+  </script>
+ </body>
 </html>

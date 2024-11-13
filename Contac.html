@@ -1,44 +1,154 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnosis Penyakit dan Hama</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
-</head>
-<body class="bg-red-50">
-    <header class="bg-red-700 text-white py-4 flex items-center justify-between px-4 md:px-6">
-        <div class="flex items-center">
-            <img alt="Logo of a plant with a magnifying glass" class="mr-2 md:mr-4" height="50" src="Desain tanpa judul.png" width="50"/>
-            <h1 class="text-xl md:text-3xl font-bold">CAB-BAIMU</h1>
-        </div>
-        <nav>
-            <ul class="flex space-x-2 md:space-x-4">
-                <li><a href="index.html"><img src="home.png" alt="Home" class="w-8 h-auto md:w-10"></a></li>
-                <li><a href="diagnosa.html"><img src="diagnosa.png" alt="Diagnosis" class="w-8 h-auto md:w-10"></a></li>
-                <li><a href="Contac.html"><img src="contac.png" alt="Contact" class="w-8 h-auto md:w-10"></a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="contact" class="py-8">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-red-700">Contact</h2>
-            <div class="flex flex-col items-center space-y-4">
-                <a href="http://wa.me/6282114556456" target="_blank" class="flex items-center space-x-4 bg-red-100 p-4 rounded-lg shadow-md hover:bg-red-200 transition">
-                    <img src="1.png" alt="Logo of WhatsApp with a green background and a white chat bubble containing a phone icon" class="w-16 h-auto md:w-20">
-                    <span class="text-base md:text-lg font-medium text-red-700">http://wa.me/6282114556456</span>
-                </a>
-                <a href="https://www.instagram.com/fthr_zhr?igsh=MWpnOW43MDc2NzVhaQ==" target="_blank" class="flex items-center space-x-4 bg-red-100 p-4 rounded-lg shadow-md hover:bg-red-200 transition">
-                    <img src="2.png" alt="Logo of Instagram with a gradient background from yellow to purple and a white camera icon" class="w-16 h-auto md:w-20">
-                    <span class="text-base md:text-lg font-medium text-red-700">fthr_zhr</span>
-                </a>
-                <a href="mailto:fthrzhr28@gmail.com" target="_blank" class="flex items-center space-x-4 bg-red-100 p-4 rounded-lg shadow-md hover:bg-red-200 transition">
-                    <img src="3.png" alt="Logo of an email envelope with a blue background" class="w-16 h-auto md:w-20">
-                    <span class="text-base md:text-lg font-medium text-red-700">fthrzhr28@gmail.com</span>
-                </a>
-            </div>
-        </div>
-    </section>
-</body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Diagnosis Penyakit dan Hama
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+        }
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(.9, .9, .9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(.97, .97, .97);
+            }
+            100% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .fade-out {
+            animation: fadeOut 1s ease-in-out;
+        }
+        .slide-in {
+            animation: slideIn 0.5s ease-in-out;
+        }
+        .slide-out {
+            animation: slideOut 0.5s ease-in-out;
+        }
+        .bounce-in {
+            animation: bounceIn 1s;
+        }
+  </style>
+ </head>
+ <body class="bg-red-50 fade-in">
+  <header class="bg-red-700 text-white py-4 flex items-center justify-between px-4 md:px-6">
+   <div class="flex items-center">
+    <img alt="Logo of a plant with a magnifying glass" class="mr-2 md:mr-4" height="50" src="Desain tanpa judul.png" width="50"/>
+    <h1 class="text-xl md:text-3xl font-bold">
+     CAB-BAIMU
+    </h1>
+   </div>
+   <nav>
+    <ul class="flex space-x-2 md:space-x-4">
+     <li>
+      <a href="index.html">
+       <img alt="Home" class="w-8 h-auto md:w-10" height="32" src="home.png" width="32"/>
+      </a>
+     </li>
+     <li>
+      <a href="diagnosa.html">
+       <img alt="Diagnosis" class="w-8 h-auto md:w-10" height="32" src="diagnosa.png" width="32"/>
+      </a>
+     </li>
+     <li>
+      <a href="Contac.html">
+       <img alt="Contact" class="w-8 h-auto md:w-10" height="32" src="contac.png" width="32"/>
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <section class="py-8 slide-in" id="contact">
+   <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-red-700">
+     Contact
+    </h2>
+    <div class="flex flex-col items-center space-y-4">
+     <a class="flex items-center space-x-4 bg-red-100 p-4 rounded-lg shadow-md hover:bg-red-200 transition bounce-in" href="http://wa.me/6282114556456" target="_blank">
+      <img alt="Logo of WhatsApp with a green background and a white chat bubble containing a phone icon" class="w-16 h-auto md:w-20" height="64" src="1.png" width="64"/>
+      <span class="text-base md:text-lg font-medium text-red-700">
+       http://wa.me/6282114556456
+      </span>
+     </a>
+     <a class="flex items-center space-x-4 bg-red-100 p-4 rounded-lg shadow-md hover:bg-red-200 transition bounce-in" href="https://www.instagram.com/fthr_zhr?igsh=MWpnOW43MDc2NzVhaQ==" target="_blank">
+      <img alt="Logo of Instagram with a gradient background from yellow to purple and a white camera icon" class="w-16 h-auto md:w-20" height="64" src="2.png" width="64"/>
+      <span class="text-base md:text-lg font-medium text-red-700">
+       fthr_zhr
+      </span>
+     </a>
+     <a class="flex items-center space-x-4 bg-red-100 p-4 rounded-lg shadow-md hover:bg-red-200 transition bounce-in" href="mailto:fthrzhr28@gmail.com" target="_blank">
+      <img alt="Logo of an email envelope with a blue background" class="w-16 h-auto md:w-20" height="64" src="3.png" width="64"/>
+      <span class="text-base md:text-lg font-medium text-red-700">
+       fthrzhr28@gmail.com
+      </span>
+     </a>
+    </div>
+   </div>
+  </section>
+  <script>
+   window.addEventListener('beforeunload', function (event) {
+            document.body.classList.add('fade-out');
+            document.getElementById('contact').classList.add('slide-out');
+        });
+  </script>
+ </body>
 </html>
